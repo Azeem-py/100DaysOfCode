@@ -26,6 +26,9 @@ SECRET_KEY = 'django-insecure-w!lw+1d1j912e_w7ougwt6=rcohhqd+&+3(84!@6_o%5zdqsil
 DEBUG = True
 
 ALLOWED_HOSTS = []
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication', ),
+}
 
 
 # Application definition
@@ -37,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'knox',
+    'api_view',
 ]
 
 MIDDLEWARE = [
